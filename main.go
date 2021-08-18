@@ -18,11 +18,18 @@ import (
 	"syscall"
 )
 
+<<<<<<< HEAD
 func main() {
 	var httpAdr = flag.String("http", ":8084", "http listen address")
 	var dbPass = flag.String("dbpass", "", "Enter DB Pass")
 	flag.Parse()
 	var dbSource = fmt.Sprintf("postgres://jddbjrse:%s@chunee.db.elephantsql.com/jddbjrse", *dbPass)
+=======
+const dbSource = "postgres://jddbjrse:gbNgFSw3wOF74Kj1SookyAQ21eJWr81W@chunee.db.elephantsql.com/jddbjrse"
+
+func main() {
+	var httpAdr = flag.String("http", ":8084", "http listen address")
+>>>>>>> 8c5efbfe95ad9853411449a9a7011f5c81b86b2f
 	var logger log.Logger
 	{
 		logger = log.NewLogfmtLogger(os.Stderr)
@@ -47,6 +54,10 @@ func main() {
 		}
 	}
 
+<<<<<<< HEAD
+=======
+	flag.Parse()
+>>>>>>> 8c5efbfe95ad9853411449a9a7011f5c81b86b2f
 	ctx := context.Background()
 	var srv account.Service
 	{
